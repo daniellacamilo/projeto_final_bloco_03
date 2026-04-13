@@ -6,7 +6,7 @@ function Home() {
 
                     <div className="flex justify-center pb-4 md:pb-0 order-first md:order-last">
                         <img
-                            src="https://ik.imagekit.io/RamonBR/produtos_farmacia/homefarmacia.png"
+                            src="https://ik.imagekit.io/jeaninny/produtos_farmacia/home.png"
                             alt="Imagem Página Home"
                             className='w-1/2 md:w-2/3'
                         />
