@@ -1,9 +1,9 @@
 import axios from "axios";
 
 // Cria uma nova instância do Axios
-const api = axios.create({
-    baseURL: "https://farmacia-nest.onrender.com/"
-})
+export const api = axios.create({
+    baseURL: import.meta.env.VITE_API_URL
+});
 
 // Função para Cadastrar
 export const cadastrar = async (url: string, dados: Object, setDados: Function) => {
