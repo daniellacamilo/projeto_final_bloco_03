@@ -1,7 +1,21 @@
-import { Link } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
 import { FirstAidIcon, MagnifyingGlassIcon, ShoppingCartIcon, UserIcon } from "@phosphor-icons/react"
+import { useState } from "react"
 
 function Navbar() {
+
+     // Estado para armazenar o termo digitado na busca
+    const [termoBusca, setTermoBusca] = useState('')
+
+    // Objeto responsável por redirecionar o usuário para uma outra rota
+    const navigate = useNavigate()
+
+    // Navega para a página de produtos filtrando pelo termo buscado
+    function buscarProdutos() {
+        if (termoBusca.trim() !== '') {
+            navigate(`/produtos?busca=${termoBusca}`)
+        }
+    }
 
 
     return (

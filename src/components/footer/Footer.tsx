@@ -12,9 +12,15 @@ function Footer() {
                     </p>
                     <p className="text-lg"> Redes Sociais</p>
                     <div className="flex gap-2">
-                        <LinkedinLogoIcon size={32} />
-                        <GithubLogoIcon size={32} />
-                        <EnvelopeIcon size={32}/>
+                        <a href="https://www.linkedin.com/in/daniella-camilo-3b64b0393/" target="_blank" rel="noreferrer">
+                            <LinkedinLogoIcon size={32} />
+                        </a>
+                        <a href="https://github.com/daniellacamilo" target="_blank" rel="noreferrer">
+                            <GithubLogoIcon size={32} />
+                        </a>
+                        <a href="mailto:daniella.camilos@gmail.com" target="_blank" rel="noreferrer">
+                            <EnvelopeIcon size={32}/>
+                        </a>
                     </div>
                 </div>
             </div>

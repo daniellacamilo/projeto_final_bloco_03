@@ -14,7 +14,7 @@ function SearchForm() {
                              placeholder:text-slate-400
                              transition-all duration-200"
                     type="search"
-                    placeholder="Buscar jogos..."
+                    placeholder="Buscar produtos..."
                     id="busca"
                     name="busca"
                     

@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom"
+
 function Home() {
     return (
         <>
@@ -18,13 +20,16 @@ function Home() {
                         </h2>
                         <p className='text-base md:text-xl'>
                             Aqui você encontra Medicamentos e Cosméticos!
-                        </p>                        
-                            <button className='bg-indigo-800 rounded text-white py-2 px-4'>
-                                Cadastrar Produto
-                            </button>
-                        
-                    </div>
+                        </p>  
 
+                        <div className="flex gap-4">
+                            <Link to="/cadastrarcategoria">
+                                <button className='bg-indigo-800 rounded text-white py-2 px-4'>
+                                    Cadastrar Produto
+                                </button>
+                            </Link>
+                        </div>
+                    </div>
                 </div>
             </div>
         </>

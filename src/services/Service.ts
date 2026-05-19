@@ -2,7 +2,7 @@ import axios from "axios";
 
 // Cria uma nova instância do Axios
 export const api = axios.create({
-    baseURL: import.meta.env.VITE_API_URL
+    baseURL: "https://farmacia-nest.onrender.com/"
 });
 
 // Função para Cadastrar
