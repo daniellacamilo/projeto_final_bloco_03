@@ -1,62 +1,46 @@
-import { PencilIcon, TrashIcon } from '@phosphor-icons/react'
-import { Link } from 'react-router-dom'
-import type Produto from '../../../models/Produto'
+import { Link } from "react-router-dom"
+import type Produto from "../../../models/Produto"
+import { PencilSimpleIcon, TrashIcon } from '@phosphor-icons/react'
 
-interface CardProdutoProps {
-	produto: Produto
+interface CardProdutosProps {
+    produto: Produto
 }
 
-function CardProduto({ produto }: CardProdutoProps) {
+function CardProduto({ produto }: CardProdutosProps) {
 
-	return (
-		<div className="flex flex-col justify-between overflow-hidden bg-white rounded-lg">
-			<div className="flex items-end justify-end pt-2 pr-2">
-				<Link to={`/editarproduto/${produto.id}`}>
-					<PencilIcon
-						size={24}
-						className="mr-1 hover:fill-teal-800"
-					/>
-				</Link>
+    return (
+        <div className="flex flex-col rounded-2xl overflow-hidden border justify-between">
+            <div className="flex w-full bg-indigo-800 text-white py-2 px-4 items-center gap-4">
+                <img
+                    src={produto.foto}
+                    className='h-12 rounded-full'
+                    alt="" />
+                <h3 className='text-lg font-bold text-center uppercase'>
+                    {produto.nome}
+                </h3>
+            </div>
+            <div className='p-4 '>
+                <p><span className="font-semibold">Categoria:</span> {produto.categoria?.nome}</p>
+                <p><span className="font-semibold">Preço:</span>{Number(produto.preco).
+                    toLocaleString('pt-BR', {
+                        style: 'currency',
+                        currency: 'BRL'
+                    })}
+                </p>
+            </div>
 
-				<Link to={`/deletarproduto/${produto.id}`}>
-					<TrashIcon
-						size={24}
-						className="mr-1 hover:fill-red-700"
-					/>
-				</Link>
-			</div>
-
-			<div className="py-4">
-				<img
-					src={produto.foto}
-					className="mx-auto mt-1 h-44 max-w-75"
-					alt={produto.nome}
-				/>
-
-				<div className="p-4">
-					<p className="text-sm text-center uppercase">
-						{produto.nome}
-					</p>
-					<h3 className="text-xl font-bold text-center uppercase">
-						{Intl.NumberFormat('pt-BR', {
-							style: 'currency',
-							currency: 'BRL',
-						}).format(produto.preco)}
-					</h3>
-					<p className="text-sm italic text-center">
-						Categoria: {produto.categoria?.nome}
-					</p>
-				</div>
-			</div>
-			<div className="flex flex-wrap">
-				<button
-					className="flex items-center justify-center w-full py-2 text-white bg-teal-600 hover:bg-teal-900"
-				>
-					Comprar
-				</button>
-			</div>
-		</div>
-	)
+            <div className="flex">
+                <Link to={`/editarproduto/${produto.id}`}
+                    className='w-full text-white bg-indigo-400 hover:bg-indigo-800 flex items-center justify-center py-2'>
+                    <PencilSimpleIcon size={24} />
+                </Link>
+                <Link to={`/deletarproduto/${produto.id}`}
+                    className='w-full text-white bg-red-400 hover:bg-red-700 flex items-center justify-center py-2'>
+                    <TrashIcon size={24} />
+                </Link>
+            </div>
+        </div>
+    )
 }
 
 export default CardProduto

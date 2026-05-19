@@ -22,9 +22,9 @@ function Home() {
                             Aqui você encontra Medicamentos e Cosméticos!
                         </p>  
 
-                        <div className="flex gap-4">
-                            <Link to="/cadastrarcategoria">
-                                <button className='bg-indigo-800 rounded text-white py-2 px-4'>
+                       <div className="flex gap-4">
+                            <Link to="/cadastrarproduto">
+                                <button className='bg-indigo-800 rounded text-white py-2 px-4 hover:bg-indigo-950'>
                                     Cadastrar Produto
                                 </button>
                             </Link>
